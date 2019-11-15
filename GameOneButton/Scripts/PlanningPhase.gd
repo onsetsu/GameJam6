@@ -12,3 +12,5 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/TestMap.tscn")
+		var tm = get_tree().get_root().get_node("TestMap")
+		print(tm)

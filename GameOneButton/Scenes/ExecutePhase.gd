@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,4 +11,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://Scenes/TestMap.tscn")
+		get_tree().change_scene("res://Scenes/PlanningPhase.tscn")

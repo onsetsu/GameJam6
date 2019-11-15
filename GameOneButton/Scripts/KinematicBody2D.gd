@@ -55,6 +55,6 @@ func _physics_process(delta):
     velocity.y += gravity * delta * gravity_multiplyer
         
     if dig:
-        position.y += digging_speed
+        position.y += digging_speed * gravity_multiplyer
     else:
         velocity = move_and_slide(velocity, Vector2(0, -1))

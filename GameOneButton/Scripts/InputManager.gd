@@ -3,12 +3,14 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const scene_path = "res://Actions.tscn"
-var actions_scene = preload(scene_path)
-onready var actions = actions_scene.instance()
 
-func get_actions():
-	actions.get_children()
+var actions
+
+func set_actions(actions):
+	self.actions = actions
+
+func _process(delta):
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

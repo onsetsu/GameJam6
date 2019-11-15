@@ -2,7 +2,7 @@ extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
-# var b = "text"
+onready var queuedActions = get_node("QueuedActions")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,11 +13,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		var game_scene = load("res://Scenes/TestMap.tscn")
 		var executePhase = instance_into_root(game_scene)
-		print(executePhase)
+		executePhase.get_node("InputManager").set_actions(queuedActions.get_actions());
 		remove_node(self)
-		#get_tree().change_scene("res://Scenes/TestMap.tscn")
-		#var tm = get_tree().get_root().get_node("TestMap")
-		#print(tm)
 
 func instance_into_root(scene_class):
     var instance = scene_class.instance()

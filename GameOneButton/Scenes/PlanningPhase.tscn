@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PlanningPhase.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/PossibleActions.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/QueuedActions.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/PossibleActions.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -14,9 +14,10 @@ margin_right = 512.0
 margin_bottom = 600.0
 script = ExtResource( 2 )
 
-[node name="QueuedActions" type="ItemList" parent="."]
-margin_left = 512.0
-margin_right = 1024.0
-margin_bottom = 600.0
-script = ExtResource( 3 )
-[connection signal="item_activated" from="PossibleActions" to="PossibleActions" method="queue_action"]
+[node name="Action" type="Button" parent="PossibleActions"]
+margin_right = 512.0
+icon = ExtResource( 3 )
+
+[node name="Action2" type="Button" parent="PossibleActions"]
+margin_right = 512.0
+icon = ExtResource( 3 )

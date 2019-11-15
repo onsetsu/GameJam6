@@ -29,18 +29,21 @@ func get_input():
     invert_gravity = Input.is_action_pressed('toggle_gravity')
 
     old_action = action
-    action = right or left or jump or dig or invert_gravity
+    action = jump or dig or invert_gravity #right or left or 
     toggle = false
     if not old_action and action:
         toggle = true
 
-    if jump and (is_on_floor() or is_on_ceiling()):
+
+    if jump and (is_on_floor() or is_on_ceiling()) and toggle:
         velocity.y = jump_speed * gravity_multiplyer
     if jump and not is_on_floor() and abs(velocity.y) < abs(max_y_velocity):
         velocity.y -= 10 * gravity_multiplyer
     
-    if is_on_floor() or is_on_ceiling():
+    if not jump:
         velocity.x *= friction
+    
+    if is_on_floor() or is_on_ceiling():
         if right:
             velocity.x += run_speed
         if left:
@@ -55,6 +58,7 @@ func _physics_process(delta):
     velocity.y += gravity * delta * gravity_multiplyer
         
     if dig:
+        collision_layer = 5
         position.y += digging_speed * gravity_multiplyer
     else:
         velocity = move_and_slide(velocity, Vector2(0, -1))

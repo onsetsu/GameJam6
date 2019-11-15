@@ -12,10 +12,13 @@ func set_actions(actions):
 
 func _process(delta):
 	if index >= actions.size(): return
-	if Input.is_action_just_pressed("ui_accept"):
-		Input.action_press(actions[index].id)
-	elif Input.is_action_just_released("ui_accept"):
-		Input.action_release(actions[index].id)
+	var action = actions[index].id
+	if Input.is_action_just_pressed("perform_action"):
+		Input.action_press(action)
+		print("press " + action)
+	elif Input.is_action_just_released("perform_action"):
+		Input.action_release(action)
+		print("release " + action)
 		index += 1
 
 # Called when the node enters the scene tree for the first time.

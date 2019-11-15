@@ -22,11 +22,11 @@ var old_action = false
 var toggle = false
 
 func get_input():
-    right = Input.is_action_pressed('ui_right')
-    left = Input.is_action_pressed('ui_left')
-    jump = Input.is_action_pressed('ui_select')
-    dig = Input.is_key_pressed(KEY_D)
-    invert_gravity = Input.is_key_pressed(KEY_G)
+    right = Input.is_action_pressed('right')
+    left = Input.is_action_pressed('left')
+    jump = Input.is_action_pressed('jump')
+    dig = Input.is_action_pressed('dig')
+    invert_gravity = Input.is_action_pressed('toggle_gravity')
 
     old_action = action
     action = right or left or jump or dig or invert_gravity

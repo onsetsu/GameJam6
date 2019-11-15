@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var run_speed = 200
-export (int) var jump_speed = -400
+export (int) var jump_speed = -450
 export (int) var gravity = 1500
 export (int) var max_y_velocity = -500
 export (float) var friction = 0.8
@@ -59,7 +59,6 @@ func _physics_process(delta):
     velocity.y += gravity * delta * gravity_multiplyer
         
     if dig:
-        collision_layer = 5
         position.y += digging_speed * gravity_multiplyer
     else:
         velocity = move_and_slide(velocity, Vector2(0, -1))

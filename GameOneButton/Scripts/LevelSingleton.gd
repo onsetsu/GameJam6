@@ -3,8 +3,8 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var amount_of_levels = 3
-var current_level = 2
+var amount_of_levels = 5
+var current_level = 5
 
 var inPlanningPhase = true
 var loadedScene

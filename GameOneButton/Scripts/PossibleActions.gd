@@ -12,6 +12,7 @@ onready var actions = actions_scene.instance().get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.set_fixed_icon_size(Vector2(64, 64))
 	for action in actions:
 		self.add_item(action.display_name, action.image, true)
 

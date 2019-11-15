@@ -12,6 +12,6 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 107.585, 101.516 )
+position = Vector2( 65.9099, 64.4712 )
 
 [node name="ActionList" parent="." instance=ExtResource( 4 )]

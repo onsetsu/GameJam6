@@ -10,3 +10,15 @@ script = ExtResource( 1 )
 id = "jump"
 display_name = "Jump"
 image = ExtResource( 2 )
+
+[node name="left" type="Node" parent="."]
+script = ExtResource( 1 )
+id = "left"
+display_name = "Left"
+image = ExtResource( 2 )
+
+[node name="right" type="Node" parent="."]
+script = ExtResource( 1 )
+id = "right"
+display_name = "Right"
+image = ExtResource( 2 )

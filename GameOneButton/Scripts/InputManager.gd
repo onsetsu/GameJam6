@@ -8,7 +8,7 @@ var actions_scene = preload(scene_path)
 onready var actions = actions_scene.instance()
 
 func get_actions():
-	actions.get_children()
+	return actions.get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

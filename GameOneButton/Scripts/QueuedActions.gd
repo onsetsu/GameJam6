@@ -6,8 +6,10 @@ extends ItemList
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.add_item("lol", null, true);
+	pass # Replace with function body.
 
+func queue(action):	
+	self.add_item(action.id, null, true);
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

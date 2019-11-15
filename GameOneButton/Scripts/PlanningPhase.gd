@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		var game_scene = load("res://Scenes/TestMap.tscn")
+		var game_scene = load("res://Scenes/MainLevel.tscn")
 		var executePhase = instance_into_root(game_scene)
 		executePhase.get_node("InputManager").set_actions(queuedActions.get_actions());
 		remove_node(self)

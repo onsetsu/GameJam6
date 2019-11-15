@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/OneButtonSprites/actions/left.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/OneButtonSprites/actions/right.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_28_b.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_01_b.PNG" type="Texture" id=6]
+[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_04_b.png" type="Texture" id=6]
 
 [node name="Node" type="Node"]
 

@@ -12,6 +12,7 @@ var list_items = []
 const prefab_path = "res://Scenes/prefabs/ActionContainer.tscn"
 var prefab_scene = preload(prefab_path)
 onready var item_prefab = prefab_scene
+var player
 
 func set_actions(actions):
 	self.actions = actions
@@ -32,6 +33,11 @@ func update_indicator():
 	if has_item:
 		list_highlight.rect_position = list_items[index].rect_position
 
+func update_items():
+	for action_index in range(actions.size()):
+		var item = list_items[action_index]
+		item.get_node("Item").scale.y = player.gravity_multiplyer
+
 func _process(delta):
 	if index >= actions.size(): return
 	var action = actions[index].id
@@ -51,6 +57,7 @@ func _ready():
 	var list_root = get_node("../ActionList")
 	list = list_root.get_node("List")
 	list_highlight = list_root.get_node("Highlight")
+	player = get_node("../Player")
 	update_indicator()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "text"
 var amount_of_levels = 3
-var current_level = 2
+var current_level = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

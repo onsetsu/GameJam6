@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/InputAction.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/OneButtonSprites/actions/jump.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/OneButtonSprites/actions/left.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/OneButtonSprites/actions/right.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_28_b.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_01_b.PNG" type="Texture" id=6]
 
 [node name="Node" type="Node"]
 
@@ -15,10 +19,22 @@ image = ExtResource( 2 )
 script = ExtResource( 1 )
 id = "left"
 display_name = "Left"
-image = ExtResource( 2 )
+image = ExtResource( 3 )
 
 [node name="right" type="Node" parent="."]
 script = ExtResource( 1 )
 id = "right"
 display_name = "Right"
-image = ExtResource( 2 )
+image = ExtResource( 4 )
+
+[node name="dig" type="Node" parent="."]
+script = ExtResource( 1 )
+id = "dig"
+display_name = "Dig"
+image = ExtResource( 5 )
+
+[node name="toggle_gravity" type="Node" parent="."]
+script = ExtResource( 1 )
+id = "toggle_gravity"
+display_name = "Toggle Gravity"
+image = ExtResource( 6 )

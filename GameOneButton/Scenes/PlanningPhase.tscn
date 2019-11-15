@@ -2,8 +2,10 @@
 
 [ext_resource path="res://Scripts/PlanningPhase.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/InputManager.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/PossibleActions.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/QueuedActions.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/PossibleActions.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/QueuedActions.gd" type="Script" id=4]
+
+
 
 [node name="Control" type="Control"]
 anchor_right = 1.0

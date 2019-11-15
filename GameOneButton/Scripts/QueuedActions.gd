@@ -12,7 +12,7 @@ func _ready():
 
 func queue(action):	
 	queuedActions.push_back(action);
-	self.add_item(action.id, null, true);
+	self.add_item(action.display_name, action.image, true)
 	
 func get_actions():
 	return queuedActions

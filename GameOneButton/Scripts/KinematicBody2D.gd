@@ -34,8 +34,8 @@ func get_input():
     if not old_action and action:
         toggle = true
 
-    if jump and is_on_floor() or is_on_ceiling():
-        velocity.y = jump_speed
+    if jump and (is_on_floor() or is_on_ceiling()):
+        velocity.y = jump_speed * gravity_multiplyer
     if jump and not is_on_floor() and abs(velocity.y) < abs(max_y_velocity):
         velocity.y -= 10 * gravity_multiplyer
     

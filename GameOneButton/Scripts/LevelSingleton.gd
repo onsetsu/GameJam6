@@ -7,7 +7,7 @@ var amount_of_levels = 5
 var current_level = 1
 
 
-var inPlanningPhase = true
+var inPlanningPhase = false
 var loadedScene
 var level_in_background
 

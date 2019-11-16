@@ -11,6 +11,9 @@ var first = true
 #func _process(delta):
 #	pass
 
-func _on_Timer_timeout():
-	LevelSingleton.loadScene()
-	remove_child($Splash)
+func _process(delta):
+	if Input.is_action_just_released("perform_action") and first:
+		LevelSingleton.inPlanningPhase = true
+		LevelSingleton.loadScene()
+		remove_child($Splash)
+		first = false

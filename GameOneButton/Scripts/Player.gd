@@ -78,10 +78,14 @@ func get_input():
 	if floor_ceiling:
 		if right:
 			velocity.x = run_speed
-			get_node("PlayerSprite").set_flip_h(false)
+			get_node("WalkingSprites").set_flip_h(false)
+			get_node("JumpingSprites").set_flip_h(false)
+			get_node("FallingSprites").set_flip_h(false)
 		if left:
 			velocity.x = -run_speed
-			get_node("PlayerSprite").set_flip_h(true)
+			get_node("WalkingSprites").set_flip_h(true)
+			get_node("JumpingSprites").set_flip_h(true)
+			get_node("FallingSprites").set_flip_h(true)
 	
 	if dig and toggle:
 		set_collision_mask(2)
@@ -106,9 +110,13 @@ func get_input():
 	if invert_gravity and toggle:
 		gravity_multiplyer *= -1
 		if gravity_multiplyer == 1:
-			get_node("PlayerSprite").set_flip_v(false)
+			get_node("WalkingSprites").set_flip_v(false)
+			get_node("JumpingSprites").set_flip_v(false)
+			get_node("FallingSprites").set_flip_v(false)
 		else:
-			get_node("PlayerSprite").set_flip_v(true)
+			get_node("WalkingSprites").set_flip_v(true)
+			get_node("JumpingSprites").set_flip_v(true)
+			get_node("FallingSprites").set_flip_v(true)
 
 func _on_collision(value):
 	print("test")

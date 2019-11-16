@@ -31,7 +31,10 @@ func _process(delta):
 func changeScene():
 	inPlanningPhase = !inPlanningPhase
 	loadScene()
-	
+
+func reset():
+	changeScene()
+
 func loadScene():
 	print("Hello")
 	var old_scene = loadedScene

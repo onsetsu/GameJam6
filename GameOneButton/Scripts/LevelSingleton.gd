@@ -56,7 +56,7 @@ func loadScene():
 		level_in_background = instance_into_root(load("res://Scenes/MainLevel.tscn"))
 		level_in_background.get_node("InputManager").disabled = true
 	else:
-		var queuedActions = old_scene.get_node("QueuedActions")
+		var queuedActions = old_scene.get_node("Panel2/QueuedActions")
 		set_actions(queuedActions.get_actions())
 		if(level_in_background != null):		
 			remove_node(level_in_background)

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/tilesExtendet.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.784537, 1 )
+colors = PoolColorArray( 0.794922, 0.540823, 0.0800929, 1, 0.323239, 0.848206, 0.319106, 1, 0.4, 0.866667, 0.396078, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+max_value = 1024.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 426.871 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.577333 ), 0.0, 1.18611, 0, 0, Vector2( 0.957216, 0.759067 ), -1.40069, -1.40069, 0, 0, Vector2( 0.989422, 0.554133 ), -15.7998, -15.7998, 0, 0, Vector2( 1, 0.0398666 ), -2.84449, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 161.35
+angular_velocity = 0.376471
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping_curve = SubResource( 5 )
+angle = 13.3
+angle_random = 0.98
+scale = 26.41
+scale_random = 0.75
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[node name="FlowerParticles" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 443, -251 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 1000, 100, 1000, 0 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 1 )
+emitting = false
+amount = 200
+one_shot = true
+explosiveness = 0.19
+process_material = SubResource( 8 )

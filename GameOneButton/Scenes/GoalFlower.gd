@@ -11,6 +11,8 @@ func on_body_entered(body):
 		return
 	goalReached = true
 	sound_win.play()
+	$FlowerParticles/Particles2D.emitting = true
+	$FlowerParticles/Particles2D.restart()
 	var rect = get_node("Sprite").region_rect
 	get_node("Sprite").region_rect = Rect2(rect.position.x, rect.position.y + 128, rect.size.x, rect.size.y)
 	print(rect)

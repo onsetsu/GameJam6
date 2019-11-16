@@ -7,6 +7,7 @@ export (int) var jump_speed = -450
 export (int) var gravity = 1500
 export (int) var max_y_velocity = -500
 export (float) var friction = 0.8
+export (float) var vertical_friction = 0.9
 export (int) var digging_speed = 5
 
 #active action
@@ -54,6 +55,9 @@ func get_input():
     
     if not jump and floor_ceiling and frames_since_last_action > 10:
         velocity.x *= friction
+    
+    if jump and not toggle and floor_ceiling:
+        velocity.x = 0
             
     if floor_ceiling:
         if right:
@@ -78,8 +82,13 @@ func get_input():
             get_node("PlayerSprite").set_flip_v(true)
 
 func _physics_process(delta):
+    if Input.is_action_just_pressed("restart"):
+        LevelSingleton.reset()
     get_input()
     
     velocity.y += gravity * delta * gravity_multiplyer
-        
+    
+    var last_x_velocity = velocity.x
     velocity = move_and_slide(velocity, Vector2(0, -1))
+    if is_on_wall():
+        velocity.x = last_x_velocity*vertical_friction

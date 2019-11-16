@@ -3,7 +3,8 @@ extends ItemList
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var queuedActions
+
+var maxActions
 
 const scene_path = "res://Actions.tscn"
 var actions_scene = preload(scene_path)
@@ -11,12 +12,15 @@ onready var action_scene = actions_scene.instance().get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	maxActions = LevelSingleton.get_level().get_node("TileMap").get_queue_count()
 	self.set_fixed_icon_size(Vector2(64, 64))
-	queuedActions = []
+	for action in LevelSingleton.get_actions():
+		queue(action)
 	pass # Replace with function body.
 
 func queue(action):	
-	self.add_item(action.display_name, action.image, true)
+	if(self.get_item_count() < maxActions):
+		self.add_item(action.display_name, action.image, true)
 	
 func get_actions():
 	var actions = []

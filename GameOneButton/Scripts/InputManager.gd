@@ -90,6 +90,7 @@ func _ready():
 	list_highlight = list_root.get_node("Highlight")
 	player = get_node("../Player")
 	update_indicator()
+	set_actions(LevelSingleton.get_actions())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

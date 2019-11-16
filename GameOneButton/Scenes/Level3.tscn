@@ -416,4 +416,4 @@ __meta__ = {
 }
 
 [node name="Spawnpoint" parent="." instance=ExtResource( 4 )]
-position = Vector2( 247.981, 555.923 )
+position = Vector2( 150.189, 529.884 )

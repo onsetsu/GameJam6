@@ -523,6 +523,7 @@ position = Vector2( 67.1102, 139.949 )
 
 [node name="Node2D" type="Node2D" parent="."]
 editor/display_folded = true
+position = Vector2( 1.25143, -10.0116 )
 
 [node name="Area2D" parent="Node2D" instance=ExtResource( 5 )]
 position = Vector2( 371.894, 573.397 )
@@ -565,12 +566,15 @@ position = Vector2( 281.632, 574.073 )
 scale = Vector2( 0.65, 0.65 )
 
 [node name="Node2D2" type="Node2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1187.11, 625.153 )
+position = Vector2( 1164.58, 635.999 )
 rotation = -15.708
 
 [node name="Area2D" parent="Node2D2" instance=ExtResource( 5 )]
 position = Vector2( 371.894, 573.397 )
+scale = Vector2( 0.65, 0.65 )
+
+[node name="Area2D11" parent="Node2D2" instance=ExtResource( 5 )]
+position = Vector2( 190.85, 574.225 )
 scale = Vector2( 0.65, 0.65 )
 
 [node name="Area2D2" parent="Node2D2" instance=ExtResource( 5 )]

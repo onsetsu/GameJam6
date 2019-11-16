@@ -31,13 +31,14 @@ func _process(delta):
 
 func changeScene():
 	inPlanningPhase = !inPlanningPhase
+	if inPlanningPhase:
+		loadedScene.get_node("InputManager").disabled = true
 	loadScene()
 
 func reset():
 	changeScene()
 
 func loadScene():
-	print("Hello")
 	var old_scene = loadedScene
 		
 	var new_scene

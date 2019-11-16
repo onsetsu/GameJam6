@@ -73,6 +73,17 @@ func get_input():
     elif not dig:
         set_collision_mask(1) 
         set_collision_layer(1)
+    
+    var pos = position
+    move_and_collide(Vector2())
+    if pos.x != position.x or pos.y != position.y:
+        position.x = pos.x
+        position.y = pos.y - 10 #temporary offset
+        print("inside")
+        set_collision_mask(2)
+        set_collision_layer(2)
+    else:
+        print("\n")
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1
@@ -80,6 +91,9 @@ func get_input():
             get_node("PlayerSprite").set_flip_v(false)
         else:
             get_node("PlayerSprite").set_flip_v(true)
+
+func _on_collision(value):
+    print("test")
 
 func _physics_process(delta):
     if Input.is_action_just_pressed("restart"):

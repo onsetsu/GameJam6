@@ -36,7 +36,7 @@ func update_indicator():
 func update_items():
 	for action_index in range(actions.size()):
 		var item = list_items[action_index]
-		item.get_node("Item").scale.y = player.gravity_multiplyer
+		item.get_node("Item").rect_scale.y = player.gravity_multiplyer
 
 func _process(delta):
 	if index >= actions.size(): return
@@ -44,11 +44,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("perform_action"):
 		Input.action_press(action)
 		list_highlight.color = Color.green
+		update_items()
 		print("press " + action)
 	elif Input.is_action_just_released("perform_action"):
 		Input.action_release(action)
 		list_highlight.color = Color.white
 		print("release " + action)
+		update_items()
 		index += 1
 		update_indicator()
 

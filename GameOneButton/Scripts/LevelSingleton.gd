@@ -50,19 +50,20 @@ func loadScene():
 	else:
 		if(level_in_background != null):		
 			remove_node(level_in_background)
+			level_in_background = null
 		new_scene = load("res://Scenes/MainLevel.tscn")
 	
 	loadedScene = instance_into_root(new_scene)
 	
-	if(level_in_background != null):		
+	if(level_in_background != null):
 		get_tree().get_root().move_child(level_in_background, 0)
 	
 	
-	if(!inPlanningPhase):		
+	if(!inPlanningPhase):
 		var queuedActions = old_scene.get_node("QueuedActions")
 		loadedScene.get_node("InputManager").set_actions(queuedActions.get_actions());
 	
-	if(old_scene != null):		
+	if(old_scene != null):
 		 remove_node(old_scene)
 		
 	return loadedScene

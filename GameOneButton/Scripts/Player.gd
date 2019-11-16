@@ -43,15 +43,21 @@ func get_input():
     
     if not jump and floor_ceiling:
         velocity.x *= friction
-    
+            
     if floor_ceiling:
         if right:
             velocity.x = run_speed
+            get_node("PlayerSprite").set_flip_h(false)
         if left:
             velocity.x = -run_speed
+            get_node("PlayerSprite").set_flip_h(true)
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1
+        if gravity_multiplyer == 1:
+            get_node("PlayerSprite").set_flip_v(false)
+        else:
+            get_node("PlayerSprite").set_flip_v(true)
 
 func _physics_process(delta):
     get_input()

@@ -1,21 +1,45 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/abstract-platformer-370-assets/PNG/Players/Player Green/playerGreen_fall.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/abstract-platformer-370-assets/Tilesheet/walkingRight.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/AnimationPlayer.gd" type="Script" id=3]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.7475, 39.0417 )
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 37.6501
+[sub_resource type="Animation" id=2]
+resource_name = "move_right"
+length = 0.19
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 546.329, 396.713 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.740669, 2.22192 )
-shape = SubResource( 1 )
+position = Vector2( 2.40406, 1.95352 )
+shape = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.3703, -0.370346 )
-scale = Vector2( 2.07198, 1.58949 )
+[node name="PlayerSprite" type="Sprite" parent="."]
+position = Vector2( -2.2834, 2.80794 )
+scale = Vector2( 1.28893, 1.25156 )
 texture = ExtResource( 2 )
+vframes = 4
+hframes = 5
+frame = 18
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
+anims/move_right = SubResource( 2 )
+script = ExtResource( 3 )

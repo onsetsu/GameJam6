@@ -299,8 +299,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [node name="Level" type="Node2D"]
 
 [node name="GoalFlower" parent="." instance=ExtResource( 1 )]
-position = Vector2( 938.369, 387.911 )
-scale = Vector2( 0.65, 0.65 )
+position = Vector2( 941.527, 370.016 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 1.48128, 0.740631 )

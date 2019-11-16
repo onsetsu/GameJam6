@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/background/sky.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/background/mountain.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/background/middleLayer.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/background/foreground.png" type="Texture" id=5]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource( 1 )
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_offset = Vector2( -100, 0 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+position = Vector2( 511.38, 299.612 )
+texture = ExtResource( 2 )
+
+[node name="MountFar" type="ParallaxLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="MountFar"]
+position = Vector2( 511.259, 304.705 )
+texture = ExtResource( 3 )
+region_enabled = true
+
+[node name="MountClose" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 20, 1 )
+motion_offset = Vector2( 20, 0 )
+
+[node name="Sprite" type="Sprite" parent="MountClose"]
+position = Vector2( 510.666, 303.366 )
+texture = ExtResource( 4 )
+
+[node name="Greeeny" type="ParallaxLayer" parent="."]
+motion_offset = Vector2( 100, 0 )
+
+[node name="Sprite" type="Sprite" parent="Greeeny"]
+position = Vector2( 511.73, 305.202 )
+texture = ExtResource( 5 )

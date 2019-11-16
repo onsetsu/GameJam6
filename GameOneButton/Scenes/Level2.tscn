@@ -314,4 +314,4 @@ script = ExtResource( 3 )
 position = Vector2( 143.085, 556.414 )
 
 [node name="Area2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 582.745, 568.338 )
+position = Vector2( 585.931, 546.834 )

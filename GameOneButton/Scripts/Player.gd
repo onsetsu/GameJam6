@@ -77,6 +77,8 @@ func get_input():
             get_node("PlayerSprite").set_flip_v(true)
 
 func _physics_process(delta):
+    if Input.is_action_just_pressed("restart"):
+        LevelSingleton.reset()
     get_input()
     
     velocity.y += gravity * delta * gravity_multiplyer

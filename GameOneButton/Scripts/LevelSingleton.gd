@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "text"
 var amount_of_levels = 6
-var current_level = 6
+var current_level = 1
 
 
 var inPlanningPhase = false

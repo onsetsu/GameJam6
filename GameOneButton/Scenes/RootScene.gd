@@ -11,6 +11,17 @@ var first = true
 #func _process(delta):
 #	pass
 
+const debug = false
+
+const scene_path = "res://Actions.tscn"
+var actions_scene = preload(scene_path)
+onready var actions = actions_scene.instance().get_children()
+
+func _ready():
+	if !debug:
+		for action in actions:
+			InputMap.action_erase_events(action.id)
+
 func _process(delta):
 	if Input.is_action_just_released("perform_action") and first:
 		LevelSingleton.inPlanningPhase = true

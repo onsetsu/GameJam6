@@ -35,7 +35,7 @@ func get_level():
 	return load(scene_path).instance()
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if inPlanningPhase && Input.is_action_just_released("perform_action"):
 		changeScene()
 
 func changeScene():

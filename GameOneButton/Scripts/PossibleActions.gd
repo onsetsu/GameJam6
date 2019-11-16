@@ -13,7 +13,7 @@ onready var action_scene = actions_scene.instance().get_children()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.set_fixed_icon_size(Vector2(64, 64))
-	for action_id in LevelSingleton.get_level().get_all_actions():
+	for action_id in LevelSingleton.get_level().get_node("TileMap").get_all_actions():
 		var action = _get_action_with_id(action_id)
 		self.add_item(action.display_name, action.image, true)
 

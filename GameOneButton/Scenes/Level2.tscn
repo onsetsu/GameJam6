@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Sprites/abstract-platformer-370-assets/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Level2.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/GoalFlower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/abstract-platformer-370-assets/Tilesheet/tilesheet_complete.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Level2.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -38,7 +39,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=12]
 4/name = "tilesheet_complete.png 4"
-4/texture = ExtResource( 1 )
+4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 64, 256, 128, 96 )
@@ -54,7 +55,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 4/z_index = 0
 5/name = "tilesheet_complete.png 5"
-5/texture = ExtResource( 1 )
+5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 768, 64, 64 )
@@ -70,7 +71,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 5/z_index = 0
 6/name = "tilesheet_complete.png 6"
-6/texture = ExtResource( 1 )
+6/texture = ExtResource( 2 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 64, 768, 64, 64 )
@@ -86,7 +87,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 6/z_index = 0
 7/name = "tilesheet_complete.png 7"
-7/texture = ExtResource( 1 )
+7/texture = ExtResource( 2 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 128, 768, 64, 64 )
@@ -102,7 +103,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 7/z_index = 0
 8/name = "tilesheet_complete.png 8"
-8/texture = ExtResource( 1 )
+8/texture = ExtResource( 2 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 352, 64, 64, 64 )
@@ -118,7 +119,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 8/z_index = 0
 9/name = "tilesheet_complete.png 9"
-9/texture = ExtResource( 1 )
+9/texture = ExtResource( 2 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 64, 64 )
@@ -134,7 +135,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 9/z_index = 0
 10/name = "tilesheet_complete.png 10"
-10/texture = ExtResource( 1 )
+10/texture = ExtResource( 2 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 128, 832, 64, 64 )
@@ -150,7 +151,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 10/z_index = 0
 11/name = "tilesheet_complete.png 11"
-11/texture = ExtResource( 1 )
+11/texture = ExtResource( 2 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 832, 64, 64 )
@@ -166,7 +167,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 11/z_index = 0
 12/name = "tilesheet_complete.png 12"
-12/texture = ExtResource( 1 )
+12/texture = ExtResource( 2 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 64, 832, 64, 64 )
@@ -182,7 +183,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 12/z_index = 0
 13/name = "tilesheet_complete.png 13"
-13/texture = ExtResource( 1 )
+13/texture = ExtResource( 2 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 64, 1088, 64, 64 )
@@ -198,7 +199,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 13/z_index = 0
 14/name = "tilesheet_complete.png 14"
-14/texture = ExtResource( 1 )
+14/texture = ExtResource( 2 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 256, 832, 64, 64 )
@@ -208,7 +209,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 14/shapes = [  ]
 14/z_index = 0
 15/name = "tilesheet_complete.png 15"
-15/texture = ExtResource( 1 )
+15/texture = ExtResource( 2 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 0, 896, 64, 64 )
@@ -218,7 +219,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 15/shapes = [  ]
 15/z_index = 0
 16/name = "tilesheet_complete.png 16"
-16/texture = ExtResource( 1 )
+16/texture = ExtResource( 2 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 64, 896, 64, 64 )
@@ -234,7 +235,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 16/z_index = 0
 17/name = "tilesheet_complete.png 17"
-17/texture = ExtResource( 1 )
+17/texture = ExtResource( 2 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 128, 896, 64, 64 )
@@ -244,7 +245,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 17/shapes = [  ]
 17/z_index = 0
 18/name = "tilesheet_complete.png 18"
-18/texture = ExtResource( 1 )
+18/texture = ExtResource( 2 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 192, 768, 64, 64 )
@@ -254,7 +255,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "tilesheet_complete.png 19"
-19/texture = ExtResource( 1 )
+19/texture = ExtResource( 2 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 192, 832, 64, 64 )
@@ -264,10 +265,16 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 19/shapes = [  ]
 19/z_index = 0
 
-[node name="TileMap2" type="TileMap"]
+[node name="Level" type="Node2D"]
+
+[node name="GoalFlower" parent="." instance=ExtResource( 1 )]
+position = Vector2( 936.218, 380.741 )
+scale = Vector2( 0.65, 0.65 )
+
+[node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 1.48128, 0.740631 )
 scale = Vector2( 0.65, 0.65 )
 tile_set = SubResource( 12 )
 format = 1
 tile_data = PoolIntArray( 327704, 5, 0, 393216, 19, 0, 393240, 11, 0, 458752, 7, 0, 458776, 11, 0, 524288, 10, 0, 524312, 11, 0, 589824, 10, 0, 589841, 19, 0, 589842, 19, 0, 589843, 18, 0, 589844, 18, 0, 589845, 19, 0, 589846, 14, 0, 589848, 11, 0, 655360, 10, 0, 655375, 5, 0, 655376, 6, 0, 655377, 5, 0, 655378, 6, 0, 655379, 6, 0, 655380, 6, 0, 655381, 6, 0, 655382, 6, 0, 655383, 6, 0, 655384, 12, 0, 720896, 10, 0, 720911, 11, 0, 720912, 12, 0, 720913, 12, 0, 720914, 12, 0, 720915, 12, 0, 720916, 12, 0, 720917, 12, 0, 720918, 12, 0, 720919, 12, 0, 720920, 12, 0, 786432, 10, 0, 786441, 5, 0, 786442, 6, 0, 786443, 6, 0, 786444, 7, 0, 786447, 11, 0, 786448, 12, 0, 786449, 12, 0, 786450, 12, 0, 786451, 12, 0, 786452, 12, 0, 786453, 12, 0, 786454, 12, 0, 786455, 12, 0, 786456, 12, 0, 851968, 10, 0, 851970, 19, 0, 851972, 19, 0, 851973, 19, 0, 851974, 19, 0, 851975, 19, 0, 851977, 11, 0, 851978, 12, 0, 851979, 12, 0, 851980, 10, 0, 851981, 18, 0, 851982, 18, 0, 851983, 11, 0, 851984, 12, 0, 851985, 12, 0, 851986, 12, 0, 851987, 12, 0, 851988, 12, 0, 851989, 12, 0, 851990, 12, 0, 851991, 12, 0, 851992, 12, 0, 917504, 12, 0, 917505, 6, 0, 917506, 6, 0, 917507, 6, 0, 917508, 6, 0, 917509, 6, 0, 917510, 6, 0, 917511, 6, 0, 917512, 6, 0, 917513, 12, 0, 917514, 12, 0, 917515, 12, 0, 917516, 12, 0, 917517, 6, 0, 917518, 6, 0, 917519, 12, 0, 917520, 12, 0, 917521, 12, 0, 917522, 12, 0, 917523, 12, 0, 917524, 12, 0, 917525, 12, 0, 917526, 12, 0, 917527, 12, 0, 917528, 12, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )

@@ -41,10 +41,10 @@ func remove_action():
 	for selected_item in self.get_selected_items():
 		self.remove_item(selected_item)
 
-func move_up_action():
+func move_up():
 	for selected_item in self.get_selected_items():
 		self.move_item(selected_item, (selected_item - 1 + self.get_item_count()) % self.get_item_count())
 
-func move_down_action():
+func move_down():
 	for selected_item in self.get_selected_items():
 		self.move_item(selected_item, (selected_item + 1) % self.get_item_count())

@@ -3,7 +3,7 @@ extends ItemList
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var queuedActions = get_node("../QueuedActions")
+onready var queuedActions = get_node("../../Panel2/QueuedActions")
 
 const scene_path = "res://Actions.tscn"
 var actions_scene = preload(scene_path)

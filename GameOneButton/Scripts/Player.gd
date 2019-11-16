@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var idle_particles = preload('res://Scenes/IdleParticles.tscn')
+
 export (int) var run_speed = 200
 export (int) var jump_speed = -450
 export (int) var gravity = 1500
@@ -21,6 +23,9 @@ var action = false
 var old_action = false
 var toggle = false
 var frames_since_last_action = 0
+
+func _ready():
+    add_child(idle_particles.instance())
 
 func get_input():
     right = Input.is_action_pressed('right')

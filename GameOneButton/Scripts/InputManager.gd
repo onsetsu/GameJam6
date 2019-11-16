@@ -9,6 +9,11 @@ const prefab_path = "res://Scenes/prefabs/ActionContainer.tscn"
 var prefab_scene = preload(prefab_path)
 onready var item_prefab = prefab_scene
 
+# load action list
+const scene_path = "res://Actions.tscn"
+var actions_scene = preload(scene_path)
+onready var restart_action = actions_scene.instance().get_node("restart")
+
 # List of actions to perform
 var actions = []
 var index = 0
@@ -90,7 +95,12 @@ func _ready():
 	list_highlight = list_root.get_node("Highlight")
 	player = get_node("../Player")
 	update_indicator()
-	set_actions(LevelSingleton.get_actions())
+	load_actions()
+
+func load_actions():
+	var actions = LevelSingleton.get_actions().duplicate()
+	actions.push_back(restart_action)
+	set_actions(actions)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -26,8 +26,10 @@ var old_action = false
 var toggle = false
 var frames_since_last_action = 0
 
+var sound_jump
+
 func _ready():
-    add_child(idle_particles.instance())
+	add_child(idle_particles.instance())
 
 func get_input():
     right = Input.is_action_pressed('right')
@@ -41,7 +43,7 @@ func get_input():
     toggle = false
     if not old_action and action:
         toggle = true
-    
+
     if not action:
         frames_since_last_action += 1
     else:
@@ -75,6 +77,13 @@ func get_input():
     elif not dig:
         set_collision_mask(1) 
         set_collision_layer(1)
+    var pos = position
+    move_and_collide(Vector2())
+    if pos.x != position.x or pos.y != position.y:
+        position.x = pos.x
+        position.y = pos.y - 10 #temporary offset
+        set_collision_mask(2)
+        set_collision_layer(2)
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1
@@ -83,14 +92,17 @@ func get_input():
         else:
             get_node("PlayerSprite").set_flip_v(true)
 
+func _on_collision(value):
+	print("test")
+
 func _physics_process(delta):
-    if Input.is_action_just_pressed("restart"):
-        LevelSingleton.reset()
-    get_input()
-    
-    velocity.y += gravity * delta * gravity_multiplyer
-    
-    var last_x_velocity = velocity.x
-    velocity = move_and_slide(velocity, Vector2(0, -1))
-    if is_on_wall():
-        velocity.x = last_x_velocity*vertical_friction
+	if Input.is_action_just_pressed("restart"):
+		LevelSingleton.reset()
+	get_input()
+	
+	velocity.y += gravity * delta * gravity_multiplyer
+	
+	var last_x_velocity = velocity.x
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+	if is_on_wall():
+		velocity.x = last_x_velocity*vertical_friction

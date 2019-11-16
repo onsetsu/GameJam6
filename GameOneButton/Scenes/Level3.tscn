@@ -1,10 +1,9 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/GoalFlower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/abstract-platformer-370-assets/Tilesheet/tilesheet_complete.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Level3.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Spawnpoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Provspikes.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -475,5 +474,3 @@ __meta__ = {
 
 [node name="Spawnpoint" parent="." instance=ExtResource( 4 )]
 position = Vector2( 150.189, 529.884 )
-
-[node name="Node2D" parent="." instance=ExtResource( 5 )]

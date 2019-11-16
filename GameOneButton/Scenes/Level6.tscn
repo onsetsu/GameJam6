@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/smallSpikes.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/abstract-platformer-370-assets/Tilesheet/tilesheet_complete.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scripts/TileMap.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/GoalFlower.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Spawnpoint.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Provspikes.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -473,6 +472,3 @@ rotation = 3.14159
 
 [node name="Spawnpoint" parent="." instance=ExtResource( 6 )]
 position = Vector2( 944.575, 61.3718 )
-
-[node name="Node2D2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 42.2281, -24.8252 )

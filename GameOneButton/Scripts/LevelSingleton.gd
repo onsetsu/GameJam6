@@ -18,7 +18,8 @@ func load_level(parent):
 	var level_scene = load(scene_path).instance()
 	parent.add_child(level_scene)
 	parent.move_child(level_scene, 0)
-	
+	return level_scene
+
 func get_level():
 	var scene_path = "res://Scenes/Level%d.tscn" % current_level
 	return load(scene_path).instance()
@@ -49,6 +50,8 @@ func loadScene():
 	
 	if(old_scene != null):		
 		 remove_node(old_scene)
+		
+	return loadedScene
 
 func instance_into_root(scene_class):
     var instance = scene_class.instance()

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/abstract-platformer-370-assets/PNG/Other/signSmall.png" type="Texture" id=1]
+
+[node name="Spawnpoint" type="Sprite"]
+texture = ExtResource( 1 )

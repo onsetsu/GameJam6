@@ -12,7 +12,8 @@ onready var action_scene = actions_scene.instance().get_children()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.set_fixed_icon_size(Vector2(64, 64))
-	queuedActions = []
+	for action in LevelSingleton.get_actions():
+		queue(action)
 	pass # Replace with function body.
 
 func queue(action):	

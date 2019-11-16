@@ -11,6 +11,14 @@ var inPlanningPhase = true
 var loadedScene
 var level_in_background
 
+var actions = []
+
+func set_actions(actions):
+	self.actions = actions
+	
+func get_actions():
+	return actions
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -48,6 +56,8 @@ func loadScene():
 		level_in_background = instance_into_root(load("res://Scenes/MainLevel.tscn"))
 		level_in_background.get_node("InputManager").disabled = true
 	else:
+		var queuedActions = old_scene.get_node("QueuedActions")
+		set_actions(queuedActions.get_actions())
 		if(level_in_background != null):		
 			remove_node(level_in_background)
 			level_in_background = null
@@ -57,11 +67,6 @@ func loadScene():
 	
 	if(level_in_background != null):
 		get_tree().get_root().move_child(level_in_background, 0)
-	
-	
-	if(!inPlanningPhase):
-		var queuedActions = old_scene.get_node("QueuedActions")
-		loadedScene.get_node("InputManager").set_actions(queuedActions.get_actions());
 	
 	if(old_scene != null):
 		 remove_node(old_scene)

@@ -79,11 +79,8 @@ func get_input():
     if pos.x != position.x or pos.y != position.y:
         position.x = pos.x
         position.y = pos.y - 10 #temporary offset
-        print("inside")
         set_collision_mask(2)
         set_collision_layer(2)
-    else:
-        print("\n")
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1

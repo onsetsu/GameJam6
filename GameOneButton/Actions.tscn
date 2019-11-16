@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/InputAction.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/OneButtonSprites/actions/jump.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/OneButtonSprites/actions/left.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/OneButtonSprites/actions/right.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_28_b.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_04_b.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/actions/jump.atlastex" type="Texture" id=2]
+[ext_resource path="res://Sprites/actions/left.atlastex" type="Texture" id=3]
+[ext_resource path="res://Sprites/actions/right.atlastex" type="Texture" id=4]
+[ext_resource path="res://Sprites/actions/dig.atlastex" type="Texture" id=5]
+[ext_resource path="res://Sprites/actions/toggle_gravity.atlastex" type="Texture" id=6]
 
 [node name="Node" type="Node"]
 

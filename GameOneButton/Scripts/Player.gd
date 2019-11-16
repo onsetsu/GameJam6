@@ -25,6 +25,8 @@ var old_action = false
 var toggle = false
 var frames_since_last_action = 0
 
+var sound_jump
+
 func _ready():
 	add_child(idle_particles.instance())
 

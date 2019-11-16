@@ -51,6 +51,13 @@ func get_input():
         if left:
             velocity.x = -run_speed
             get_node("PlayerSprite").set_flip_h(true)
+            
+    if dig and toggle:
+        set_collision_mask(2)
+        set_collision_layer(2)
+    elif not dig:
+        set_collision_mask(1) 
+        set_collision_layer(1)
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1
@@ -64,7 +71,4 @@ func _physics_process(delta):
     
     velocity.y += gravity * delta * gravity_multiplyer
         
-    if dig:
-        position.y += digging_speed * gravity_multiplyer
-    else:
-        velocity = move_and_slide(velocity, Vector2(0, -1))
+    velocity = move_and_slide(velocity, Vector2(0, -1))

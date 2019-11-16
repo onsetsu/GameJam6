@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/actions/right.atlastex" type="Texture" id=4]
 [ext_resource path="res://Sprites/actions/dig.atlastex" type="Texture" id=5]
 [ext_resource path="res://Sprites/actions/toggle_gravity.atlastex" type="Texture" id=6]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_03_b.PNG" type="Texture" id=7]
+[ext_resource path="res://Sprites/actions/restart.atlastex" type="Texture" id=7]
 
 [node name="Node" type="Node"]
 

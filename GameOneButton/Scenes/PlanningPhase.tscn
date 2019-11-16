@@ -1,15 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/PlanningPhase.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PossibleActions.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/QueuedActions.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_20_b.PNG" type="Texture" id=4]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_31_b.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/OneButtonSprites/EngineeringCraftIcons_bg/engeniring_46_b.PNG" type="Texture" id=6]
+[ext_resource path="res://Sprites/OneButtonSprites/tiles/tilesExtendet.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 512, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 512, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 512, 832, 64, 64 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -39,37 +52,37 @@ custom_styles/bg = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Remove" type="Button" parent="."]
-margin_left = 512.0
+margin_left = 574.0
 margin_top = 512.0
-margin_right = 600.0
+margin_right = 662.0
 margin_bottom = 600.0
 
 [node name="Sprite" type="Sprite" parent="Remove"]
 position = Vector2( 44, 44 )
-scale = Vector2( 0.344, 0.344 )
-texture = ExtResource( 4 )
+scale = Vector2( 1.375, 1.375 )
+texture = SubResource( 3 )
 
 [node name="Move Up" type="Button" parent="."]
-margin_left = 600.0
+margin_left = 724.0
 margin_top = 512.0
-margin_right = 688.0
+margin_right = 812.0
 margin_bottom = 600.0
 
-[node name="Sprite" type="Sprite" parent="Move Up"]
+[node name="Sprite2" type="Sprite" parent="Move Up"]
 position = Vector2( 44, 44 )
-scale = Vector2( 0.344, 0.344 )
-texture = ExtResource( 5 )
+scale = Vector2( 1.375, 1.375 )
+texture = SubResource( 4 )
 
 [node name="Move Down" type="Button" parent="."]
-margin_left = 688.0
+margin_left = 874.0
 margin_top = 512.0
-margin_right = 776.0
+margin_right = 962.0
 margin_bottom = 600.0
 
 [node name="Sprite" type="Sprite" parent="Move Down"]
 position = Vector2( 44, 44 )
-scale = Vector2( 0.344, 0.344 )
-texture = ExtResource( 6 )
+scale = Vector2( 1.375, 1.375 )
+texture = SubResource( 5 )
 [connection signal="item_activated" from="PossibleActions" to="PossibleActions" method="queue_action"]
 [connection signal="button_down" from="Remove" to="QueuedActions" method="remove_action"]
 [connection signal="button_down" from="Move Up" to="QueuedActions" method="move_up_action"]

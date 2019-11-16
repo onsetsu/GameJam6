@@ -20,6 +20,7 @@ var gravity_multiplyer = 1
 var action = false
 var old_action = false
 var toggle = false
+var frames_since_last_action = 0
 
 func get_input():
     right = Input.is_action_pressed('right')
@@ -29,10 +30,15 @@ func get_input():
     invert_gravity = Input.is_action_pressed('toggle_gravity')
 
     old_action = action
-    action = jump or dig or invert_gravity #right or left or 
+    action = jump or dig or invert_gravity or right or left
     toggle = false
     if not old_action and action:
         toggle = true
+    
+    if not action:
+        frames_since_last_action += 1
+    else:
+        frames_since_last_action = 0
 
     var floor_ceiling = is_on_floor() or is_on_ceiling()
 
@@ -41,7 +47,7 @@ func get_input():
     if jump and not is_on_floor() and abs(velocity.y) < abs(max_y_velocity):
         velocity.y -= 10 * gravity_multiplyer
     
-    if not jump and floor_ceiling:
+    if not jump and floor_ceiling and frames_since_last_action > 10:
         velocity.x *= friction
             
     if floor_ceiling:
@@ -51,6 +57,13 @@ func get_input():
         if left:
             velocity.x = -run_speed
             get_node("PlayerSprite").set_flip_h(true)
+            
+    if dig and toggle:
+        set_collision_mask(2)
+        set_collision_layer(2)
+    elif not dig:
+        set_collision_mask(1) 
+        set_collision_layer(1)
 
     if invert_gravity and toggle:
         gravity_multiplyer *= -1
@@ -64,7 +77,4 @@ func _physics_process(delta):
     
     velocity.y += gravity * delta * gravity_multiplyer
         
-    if dig:
-        position.y += digging_speed * gravity_multiplyer
-    else:
-        velocity = move_and_slide(velocity, Vector2(0, -1))
+    velocity = move_and_slide(velocity, Vector2(0, -1))

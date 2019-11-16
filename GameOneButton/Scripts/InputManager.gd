@@ -13,6 +13,7 @@ const prefab_path = "res://Scenes/prefabs/ActionContainer.tscn"
 var prefab_scene = preload(prefab_path)
 onready var item_prefab = prefab_scene
 var player
+var disabled = false
 
 func set_actions(actions):
 	self.actions = actions
@@ -38,7 +39,9 @@ func update_items():
 		var item = list_items[action_index]
 		item.get_node("Item").rect_scale.y = player.gravity_multiplyer
 
-func _process(delta):
+func _process(delta):	
+	if(disabled):
+		return
 	if index >= actions.size(): return
 	var action = actions[index].id
 	if Input.is_action_just_pressed("perform_action"):

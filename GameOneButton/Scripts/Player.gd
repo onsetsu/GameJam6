@@ -130,7 +130,7 @@ func handle_sound():
 	was_walking = is_walking
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("restart"):
+	if Input.is_action_just_released("restart"):
 		LevelSingleton.reset()
 	get_input()
 	handle_sound()

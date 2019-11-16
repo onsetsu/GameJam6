@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "text"
 var amount_of_levels = 5
-var current_level = 3
+var current_level = 2
 
 
 var inPlanningPhase = true
@@ -35,7 +35,7 @@ func get_level():
 	return load(scene_path).instance()
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if inPlanningPhase && Input.is_action_just_released("perform_action"):
 		changeScene()
 
 func changeScene():

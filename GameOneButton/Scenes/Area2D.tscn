@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Area2D.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/abstract-platformer-370-assets/PNG/Other/spikesHigh.png" type="Texture" id=2]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2( 3.48376, 691.176 )
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -31.2913, 14.6439, -21.7887, -14.7277, -17.2965, -14.555, -10.04, 6.86908, -2.09235, -14.0366, 1.70869, -14.0366, 9.8291, 7.04186, 17.4312, -14.3822, 21.7505, -14.555, 30.9076, 14.2984 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

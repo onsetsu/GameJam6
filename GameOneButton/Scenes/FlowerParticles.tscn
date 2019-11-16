@@ -30,6 +30,7 @@ flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 161.35
+angular_velocity = 0.376471
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping_curve = SubResource( 5 )
@@ -43,6 +44,7 @@ color_ramp = SubResource( 3 )
 [node name="FlowerParticles" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 443, -251 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 1000, 100, 1000, 0 )

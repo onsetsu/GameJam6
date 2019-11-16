@@ -17,6 +17,7 @@ func _process(delta):
 	if(goalReached):
 		timer -= delta
 		if(timer < 0):
+			LevelSingleton.set_actions([])
 			LevelSingleton.current_level = LevelSingleton.current_level % LevelSingleton.amount_of_levels
 			LevelSingleton.current_level += 1
 			LevelSingleton.changeScene()

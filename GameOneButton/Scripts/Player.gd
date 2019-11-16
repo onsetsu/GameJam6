@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var idle_particles = preload('res://Scenes/IdleParticles.tscn')
+var jump_particles = preload('res://Scenes/JumpParticles.tscn')
 
 export (int) var run_speed = 200
 export (int) var jump_speed = -450
@@ -49,6 +50,7 @@ func get_input():
     var floor_ceiling = is_on_floor() or is_on_ceiling()
 
     if jump and floor_ceiling and toggle:
+        add_child(jump_particles.instance())
         velocity.y = jump_speed * gravity_multiplyer
     if jump and not is_on_floor() and abs(velocity.y) < abs(max_y_velocity):
         velocity.y -= 10 * gravity_multiplyer
